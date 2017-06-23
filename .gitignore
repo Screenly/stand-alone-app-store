@@ -1,0 +1,16 @@
+
+#Mr Developer
+.mr.developer.cfg
+
+# Emacs
+.#*
+
+# VIM
+*.swp
+*.swo
+
+.DS_Store
+
+/node_modules
+/assets
+/build
