@@ -1,0 +1,8 @@
+
+        <!-- Screenly JS -->
+        {% javascript js/app %}
+        {% if page.assets.js %}
+        {% for js in page.assets.js %}{% javascript {{js}} %}{% endfor %}
+        {% endif %}
+    </body>
+</html>

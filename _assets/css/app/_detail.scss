@@ -1,0 +1,17 @@
+body.product {
+	.app-settings{
+		position: relative;
+
+		.modal-trigger{
+			position: absolute;
+			right: 20px;
+			top: 50%;
+			font-size: 7px;
+			color: black;
+		}
+
+		.modal-instance + input {
+			padding-right:35px;
+		}
+	}
+}

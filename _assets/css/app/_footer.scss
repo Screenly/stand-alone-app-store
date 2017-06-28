@@ -1,0 +1,14 @@
+footer {
+
+    .logo {
+        max-height: 3em;
+    }
+
+    &.footer-3 {
+        .logo {
+            & + ul {
+                vertical-align: text-bottom;
+            }
+        }
+    }
+}

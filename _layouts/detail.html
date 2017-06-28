@@ -1,0 +1,66 @@
+{% include head.html %} {% include header.html %}
+<div class="main-container">
+    <section class="space--xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>{{page.title}}</h1>
+                    <ol class="breadcrumbs">
+                        <li><a href="{{site.url}}">Home</a></li>
+                        <li>{{page.title}}</li>
+                    </ol>
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <section class="space--xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="slider border--round boxed--border" data-paging="true" data-arrows="true">
+                        <ul class="slides">
+                            <li>
+                                <img alt="Image" src="{{site.url}}/assets/img/{{page.app.image}}" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <h2>{{page.title}}</h2>
+                    <p>{{page.description}}</p>
+                    <form id="app-form">
+                        <div class="col-sm-12 app-settings">
+                            {% if page.app.config %}
+                            <div class="modal-instance">
+                                <a href="#" class="modal-trigger"><i class="icon icon-Gear"></i></a>
+                                <div class="modal-container" id="app-config">
+                                    <div class="modal-content">
+                                        <div class="boxed boxed--lg">
+                                            {% include_relative {{page.app.config}} %}
+                                        </div>
+                                        <div class="modal-close modal-close-cross"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end of modal instance-->
+                            {% endif %}
+                            <input type="text" id="app-form-url" data-url="{{page.app.url}}" value="{{page.app.url}}" readonly />
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#" id="app-form-btn" class="btn btn--primary btn--icon btn-clipboard" data-clipboard-target="#app-form-url">
+                                <span class="btn__text"><i class="icon icon-File-Clipboard"></i>Copy to Clipboard</span>
+                            </a>
+                        </div>
+                        <div class="col-sm-6"></div>
+                    </form>
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    {{ content }} {% include footer.html %}
+</div>
+{% include foot.html %}
