@@ -38,7 +38,7 @@ excerpt_separator: "<!--more-->"
 #
 production_url: http://apps.screenly.io
 #url: http://apps.screenly.io
-url: http://dev.sansxerif.com/screenly/store
+#url: http://dev.sansxerif.com/screenly/store
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
