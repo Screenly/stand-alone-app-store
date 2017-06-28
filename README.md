@@ -2,15 +2,14 @@
 Screenly Apps for digital signage
 
 ## Quickstart
-Assuming Git, **[Vagrant](https://www.vagrantup.com/)** and **[VirtualBox](https://www.virtualbox.org/)** is installed:
+See Jekyll **[Quick-start guide](https://jekyllrb.com/docs/quickstart/)**.
 
-```bash
+```
 cd [your cloned folder]
 jekyll serve
 ```
 
-You should be able to reach the styleguide under http://localhost:4000.
-
+You should be able to reach the store page under http://localhost:4000 or 127.0.0.1.4000
 
 ## Copyright and license
 
