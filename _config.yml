@@ -2,7 +2,18 @@
 # For more see: http://jekyllrb.com/docs/permalinks/
 permalink: /blog/:year/:month/:day/:title/
 
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "*.log", "autoprefixer.yml"]
+exclude: ["
+  .rvmrc",
+  ".rbenv-version",
+  "README.md",
+  "Rakefile",
+  "changelog.md",
+  "Gemfile",
+  "Gemfile.lock",
+  "*.log",
+  "autoprefixer.yml",
+  "docker-compose.yml",
+]
 
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
@@ -14,9 +25,9 @@ email: hello@screenly.io
 author:
   name: Screenly
   email: hello@screenly.io
-  github: 
-  twitter: 
-  feedburner: 
+  github:
+  twitter:
+  feedburner:
 social:
   google_plus: https://plus.google.com/+Screenlyapp
   facebook: https://www.facebook.com/Screenly/
@@ -36,7 +47,7 @@ excerpt_separator: "<!--more-->"
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url: http://apps.screenly.io
+production_url: http://apps.screenlyapp.com
 #url: http://apps.screenly.io
 #url: http://dev.sansxerif.com/screenly/store
 

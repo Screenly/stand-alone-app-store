@@ -2,14 +2,14 @@
 Screenly Apps for digital signage
 
 ## Quickstart
-See Jekyll **[Quick-start guide](https://jekyllrb.com/docs/quickstart/)**.
+
+* Install Docker and Docker Compose
 
 ```
-cd [your cloned folder]
-jekyll serve
+$ docker-compose up
 ```
 
-You should be able to reach the store page under http://localhost:4000 or 127.0.0.1.4000
+You should be able to reach the store page under http://127.0.0.1:8080
 
 ## Copyright and license
 
