@@ -174,8 +174,6 @@ highlighter: rouge
 
 # docs http://www.rubydoc.info/gems/jekyll-assets/
 assets:
-  cachebust: soft
-  prefix: "/assets/"
   compress:
     css:  true
     js:   uglifier
@@ -184,8 +182,14 @@ assets:
       - "> 1%"
       - "last 3 versions"
       - "IE > 9"
+  prefix: "/assets"
   sources:
     - _assets/
+    - _assets/js
+    - _assets/javascript
+    - _assets/css
+    - _assets/styles
     - _assets/img
+    - _assets/images
     - _assets/fonts
 

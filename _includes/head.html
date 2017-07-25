@@ -24,12 +24,6 @@
         {% javascript js/vendor/modernizr %}
 
         <!-- Style Dependencies -->
-        {% stylesheet css/vendor/bootstrap.css %}
-        {% stylesheet css/vendor/stack-interface.css %}
-        {% stylesheet css/vendor/socicon.css %}
-        {% stylesheet css/vendor/lightbox.min.css %}
-        {% stylesheet css/vendor/iconsmind.css %}
-        {% stylesheet css/vendor/theme.css %}
         {% if page.assets.vendor_css %}
         {% for css in page.assets.vendor_css %}{% stylesheet {{css}} %}{% endfor %}
         {% endif %}

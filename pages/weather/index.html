@@ -10,5 +10,23 @@ assets:
 app:
   url: http://weather.apps.screenlyapp.com
   image: app-weather.jpg
-  config: _config.html
 ---
+
+    <div id="modal-location" class="modal-instance">
+        <a class="btn btn--primary modal-trigger col-xs-12" href="#">
+            <span class="btn__text">Configure Settings</span>
+        </a>
+        <div class="modal-container" id="app-config">
+            <div class="modal-content">
+                <div class="boxed boxed--lg">
+                    <div id="config" class="container">
+                        <h3 class="unmarg--bottom">You can set a location for weather App</h3>
+                        <p>Please drag the map bellow to the desired location where you would like to see the weather conditions</p>
+                        <div id="config-map"></div>
+                        <i class="marker icon icon-Geo2"></i>
+                    </div>
+                </div>
+                <div class="modal-close modal-close-cross"></div>
+            </div>
+        </div>
+    </div>

@@ -1,17 +1,22 @@
 body.product {
-	.app-settings{
-		position: relative;
 
-		.modal-trigger{
-			position: absolute;
-			right: 20px;
-			top: 50%;
-			font-size: 7px;
-			color: black;
-		}
+	h4 {
+		margin-bottom: 21px;
+	}
 
-		.modal-instance + input {
-			padding-right:35px;
+	.app-settings {
+		/*position: relative;*/
+	
+		.btn {
+			vertical-align: top;
 		}
+	}
+
+	.modal-instance + input {
+		padding-right:35px;
+	}
+
+	img {
+		margin-bottom:0;
 	}
 }
