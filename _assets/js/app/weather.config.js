@@ -2,7 +2,7 @@
     var mapel = $('#config-map');
     if (mapel.length > 0) {
         if ('google' in window === false) {
-            $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCfo_V3gmpPm1WzJEC9p_sRbgvyVbiO83M")
+            $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyD4xizgVnzfyTQgM15V3tvihZxQDAdUuAg")
                 .done(function(script, textStatus) {
                     var map = new google.maps.Map(mapel[0], {
                         zoom: 16,
