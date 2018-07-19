@@ -15,14 +15,15 @@ else
     exit
 fi
 
-mkdir -p {.asset-cache,_site}
-chmod a+rwX -R {.asset-cache,_site}
+function run_in_container {
+    docker run \
+        --rm \
+        -v $(pwd):/usr/src/app \
+        -e JEKYLL_ENV=production \
+        "$IMAGE" "$@"
+}
 
-docker run \
-    --rm \
-    -v $(pwd):/usr/src/app \
-    -e JEKYLL_ENV=production \
-    "$IMAGE" \
-    jekyll build --config "$BUILDARGS"
 
-rm -rf .asset-cache
+run_in_container rm -rf {.asset-cache,_site}
+run_in_container mkdir -p {.asset-cache,_site}
+run_in_container jekyll build --config "$BUILDARGS"
