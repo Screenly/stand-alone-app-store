@@ -15,8 +15,8 @@ else
     exit
 fi
 
-mkdir -p .asset-cache
-chmod a+rwX -R .asset-cache
+mkdir -p {.asset-cache,_site}
+chmod a+rwX -R {.asset-cache,_site}
 
 docker run \
     --rm \
