@@ -6,7 +6,6 @@ services:
     image: app_store_srly_io:latest
     volumes:
       - .:/usr/src/app
-      - /tmp/asset-cache:/usr/src/app/.asset-cache
     environment:
       - JEKYLL_ENV=development
   nginx:

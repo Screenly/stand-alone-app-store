@@ -15,6 +15,7 @@ else
     exit
 fi
 
+mkdir -p .asset-cache
 docker run \
     --rm \
     -v $(pwd):/usr/src/app \
