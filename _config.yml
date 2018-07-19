@@ -177,6 +177,8 @@ highlighter: rouge
 
 # docs http://www.rubydoc.info/gems/jekyll-assets/
 assets:
+  caching:
+    type: memory # Possible values: memory, file
   compress:
     css:  true
     js:   uglifier
