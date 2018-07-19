@@ -25,5 +25,6 @@ function run_in_container {
 
 
 run_in_container rm -rf {.asset-cache,_site}
-run_in_container mkdir -p {.asset-cache,_site}
+run_in_container mkdir -p {.asset-cache/sprockets,_site}
+run_in_container chown a+rwX -R {.asset-cache,_site}
 run_in_container jekyll build --config "$BUILDARGS"
