@@ -16,9 +16,13 @@ else
 fi
 
 mkdir -p .asset-cache
+chmod a+rwX -R .asset-cache
+
 docker run \
     --rm \
     -v $(pwd):/usr/src/app \
     -e JEKYLL_ENV=production \
     "$IMAGE" \
     jekyll build --config "$BUILDARGS"
+
+rm -rf .asset-cache
