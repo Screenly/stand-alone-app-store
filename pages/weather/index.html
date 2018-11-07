@@ -44,7 +44,7 @@ app:
                         <div class="col-lg-4">
                             <p class="unmarg--bottom">Select language application.</p>
                             <select id="language-select">
-                                <option selected="selected" value="">Default</option>
+                                <option selected="selected" value="">Autodetect by country</option>
                                 {% for lang in site.data.weather.languages %}
                                     <option value="{{ lang.value }}">{{ lang.name }}</option>
                                 {% endfor %}
