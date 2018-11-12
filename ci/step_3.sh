@@ -3,7 +3,7 @@
 # -*- sh-basic-offset: 4 -*-
 
 GITBRANCH=$(git rev-parse --abbrev-ref HEAD)
-SERVERS=(real.se2.hosting.wireload.net real.us.hosting.wireload.net)
+SERVERS=(real.us.hosting.wireload.net)
 
 # Accept SSH keys
 for server in "${SERVERS[@]}"; do
