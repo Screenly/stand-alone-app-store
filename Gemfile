@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'jekyll', '~>3.7.3'
+gem "jekyll", "3.9.0"
 
 #
 # jekyll-assets plugin itself
@@ -15,7 +15,10 @@ gem "jekyll-assets", '~>2.4.0'
 gem "autoprefixer-rails" # If we want to auto-prefixe our css rules
 gem "uglifier"      # And if we want our javascripts to be minified with UglifyJS
 gem "sass"          # And if we want to write our stylesheets using SCSS/SASS
-
-gem "html-proofer"
 gem "therubyracer"
+
+group :jekyll_plugins do
+  gem "html-proofer"
+end
+
 

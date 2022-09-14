@@ -22,7 +22,6 @@
         "lng": "",
         "lang": "",
         "24h": "",
-        "wind_speed": ""
     };
 
     var mapel = $('#config-map');
@@ -38,17 +37,13 @@
                     });
                     google.maps.event.addListener(map, 'dragend', function() {
                         var center = map.getCenter();
-                        params.lat = center.lat();
-                        params.lng = center.lng();
+                        params.lat = center.lat().toFixed(2);
+                        params.lng = center.lng().toFixed(2);
                         set_url();
                     });
                 });
         }
     }
-    $('#windspeed-select').change(function() {
-        params.wind_speed = $("#windspeed-select option:selected").val();
-        set_url();
-    });
     $('#clockformat-select').change(function() {
         params['24h'] = $("#clockformat-select option:selected").val();
         set_url();
