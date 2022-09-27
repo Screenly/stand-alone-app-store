@@ -28,8 +28,11 @@ jobs:
 
           if [ "$GITHUB_REF_NAME" == 'master' ]; then
             BUILDARGS="_config.yml,_config_stage.yml"
+            echo 'BUILD_ENV=stage' >> $GITHUB_ENV
+
           elif [ "$GITHUB_REF_NAME" == 'production' ]; then
             BUILDARGS="_config.yml"
+            echo 'BUILD_ENV=production' >> $GITHUB_ENV
           else
             exit
           fi
@@ -73,6 +76,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: "app-store-$GITHUB_REF_NAME"
+          projectName: "app-store-$BUILD_ENV"
           directory: _site
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
