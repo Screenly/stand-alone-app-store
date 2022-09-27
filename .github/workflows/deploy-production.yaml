@@ -3,11 +3,9 @@ name: Deploy
 on:
   push:
     branches:
-      - master
       - production
   pull_request:
     branches:
-      - master
       - production
 jobs:
   deploy:
@@ -26,16 +24,8 @@ jobs:
 
           docker-compose build
 
-          if [ "$GITHUB_REF_NAME" == 'master' ]; then
-            BUILDARGS="_config.yml,_config_stage.yml"
-            echo 'BUILD_ENV=stage' >> $GITHUB_ENV
-
-          elif [ "$GITHUB_REF_NAME" == 'production' ]; then
-            BUILDARGS="_config.yml"
-            echo 'BUILD_ENV=production' >> $GITHUB_ENV
-          else
-            exit
-          fi
+          BUILDARGS="_config.yml"
+          echo 'BUILD_ENV=production' >> $GITHUB_ENV
 
           function run_in_container {
             docker run \
@@ -60,15 +50,12 @@ jobs:
         run: |
           IMAGE=app_store_srly_io:latest
 
-          # Deploy to stage
-          if [ "$GITHUB_REF_NAME" == 'production' ]; then
-            docker run \
-              --rm \
-              -v "$(pwd)":/usr/src/app \
-              -e JEKYLL_ENV=production \
-              "$IMAGE" \
-              bundle exec htmlproofer ./_site || true
-          fi
+          docker run \
+            --rm \
+            -v "$(pwd)":/usr/src/app \
+            -e JEKYLL_ENV=production \
+            "$IMAGE" \
+            bundle exec htmlproofer ./_site || true
 
       - name: Publish
         if: github.event_name != 'pull_request'
@@ -76,6 +63,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: "app-store-stage"
+          projectName: app-store-production
           directory: _site
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          environment: production
