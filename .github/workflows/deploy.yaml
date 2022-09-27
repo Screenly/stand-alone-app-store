@@ -1,4 +1,4 @@
-name: Deploy Stage
+name: Deploy
 
 on:
   push:
@@ -19,6 +19,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Legacy CI step 1
         run: |
           IMAGE=app_store_srly_io:latest
@@ -52,6 +53,7 @@ jobs:
           run_in_container rm -rf .asset-cache
 
           find _site
+
       - name: Legacy CI step 2
         run: |
           IMAGE=app_store_srly_io:latest
@@ -72,6 +74,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: app-store-stage
+          projectName: "app-store-$GITHUB_BASE_REF"
           directory: _site
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
