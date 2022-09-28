@@ -66,4 +66,3 @@ jobs:
           projectName: app-store-production
           directory: _site
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          environment: production

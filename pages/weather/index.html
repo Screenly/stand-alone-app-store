@@ -33,16 +33,6 @@ app:
                                 <option value="1">24h format</option>
                             </select>
                         </div>
-                        <div class="col-lg-4">
-                            <p class="unmarg--bottom">Select language application.</p>
-                            <select id="language-select">
-                                <option selected="selected" value="">Default</option>
-                                <option value="auto">Autodetect by country</option>
-                                {% for lang in site.data.weather.languages %}
-                                    <option value="{{ lang.value }}">{{ lang.name }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
                     </div>
                 </div>
                 <div class="modal-close modal-close-cross"></div>
